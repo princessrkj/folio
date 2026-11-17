@@ -35,7 +35,6 @@ export function SiteHeader() {
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#top" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
           <span className="font-serif text-2xl font-medium tracking-tight">{site.brand}</span>
-          <span className="text-[0.65rem] uppercase tracking-[0.28em] text-sage-deep">{site.tagline}</span>
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">

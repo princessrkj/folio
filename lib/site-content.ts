@@ -4,17 +4,19 @@
  */
 
 export const site = {
-  brand: 'Your Name',
-  tagline: 'Studio',
-  ownerName: 'Your Name',
-  email: 'hello@yourdomain.com',
-  location: 'Your City, State',
-  serviceArea: 'Organizing available locally · AI services available remotely',
+  brand: 'Tiffany Givens',
+  ownerName: 'Tiffany Givens',
+  headline: 'AI Training & Data Annotation | Business Operations | Professional Organizing',
+  email: 'tffnygivens@gmail.com',
+  location: 'Southwest Georgia, USA',
+  availability:
+    'Open to remote AI training, data annotation, model evaluation, and quality assurance opportunities nationwide, including employment and independent contracts.',
+  serviceArea: 'Based in Southwest Georgia, USA · Organizing available locally · AI work available remotely nationwide',
   /** Add a path like "/resume.pdf" (placed in /public) to enable the download button. */
   resumeUrl: '',
   social: [
     { label: 'LinkedIn', href: '#' },
-    { label: 'Email', href: 'mailto:hello@yourdomain.com' },
+    { label: 'Email', href: 'mailto:tffnygivens@gmail.com' },
   ],
 }
 

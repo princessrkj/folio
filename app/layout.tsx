@@ -13,9 +13,8 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: `${site.brand} — AI Data Annotation, AI Evaluation & Professional Organizing`,
-  description:
-    'Independent professional offering remote AI data annotation, AI training and evaluation, and local residential professional organizing services.',
+  title: `${site.brand} — ${site.headline}`,
+  description: `${site.brand} · ${site.location}. ${site.availability} Residential professional organizing available locally.`,
   generator: 'v0.app',
   icons: {
     icon: [

@@ -9,9 +9,9 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl gap-14 px-6 pb-20 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pb-28">
         <div className="lg:col-span-7 lg:pt-8">
           <Reveal>
-            <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-sage-deep">
-              <span aria-hidden="true" className="h-px w-8 bg-sage" />
-              Independent professional services
+            <p className="flex items-start gap-3 text-xs font-medium uppercase leading-relaxed tracking-[0.22em] text-sage-deep">
+              <span aria-hidden="true" className="mt-[0.6em] h-px w-8 shrink-0 bg-sage" />
+              {site.headline}
             </p>
           </Reveal>
           <Reveal delay={100}>
