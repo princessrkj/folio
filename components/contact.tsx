@@ -25,6 +25,21 @@ export function Contact() {
       return
     }
     setError('')
+
+    const data = new FormData(e.currentTarget)
+    const field = (key: string) => String(data.get(key) ?? '').trim()
+    const subject = `Inquiry: ${selected.join(', ')}`
+    const body = [
+      `Name: ${field('name')}`,
+      `Email: ${field('email')}`,
+      `Company or location: ${field('company') || '—'}`,
+      `Ideal timeline: ${field('timeline') || '—'}`,
+      `Interested in: ${selected.join(', ')}`,
+      '',
+      field('details'),
+    ].join('\n')
+
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSubmitted(true)
   }
 
@@ -72,6 +87,10 @@ export function Contact() {
                   {site.location}
                 </li>
               </ul>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <span className="font-medium text-foreground">Availability: </span>
+                {site.availability}
+              </p>
             </div>
           </Reveal>
         </div>
@@ -83,9 +102,14 @@ export function Contact() {
                 <span className="flex size-14 items-center justify-center rounded-full bg-sage-soft">
                   <Check className="size-6 text-sage-deep" aria-hidden="true" />
                 </span>
-                <h3 className="mt-6 font-serif text-3xl font-medium">Thank you for reaching out.</h3>
+                <h3 className="mt-6 font-serif text-3xl font-medium">Almost there.</h3>
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                  Your inquiry has been received. I&apos;ll be in touch soon with next steps.
+                  Your email app should open with your inquiry pre-filled — press send there to deliver it. If nothing
+                  opened, email me directly at{' '}
+                  <a href={`mailto:${site.email}`} className="font-medium text-foreground underline underline-offset-4">
+                    {site.email}
+                  </a>
+                  .
                 </p>
                 <button
                   type="button"
@@ -197,6 +221,9 @@ export function Contact() {
                   Send inquiry
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </button>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  This opens a pre-filled message in your own email app addressed to {site.email}.
+                </p>
               </form>
             )}
           </div>
